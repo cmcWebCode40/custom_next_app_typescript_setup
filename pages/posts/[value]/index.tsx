@@ -23,9 +23,7 @@ export default function About(): JSX.Element {
 
 About.getInitialProps = async (query: QueryParams) => {
   try {
-    const res = await fetch(
-      `https://jsonplaceholder.typicode.com/posts/${query}`
-    );
+    await fetch(`https://jsonplaceholder.typicode.com/posts/${query}`);
   } catch (error) {}
 
   return About;
