@@ -1,6 +1,7 @@
 import { gql, useQuery, NetworkStatus } from '@apollo/client';
-// import { useDispatch } from 'react-redux';
-// import { setValue } from '../libs/slices/sampleSlice';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setValue } from '../libs/slices/sampleSlice';
 
 export const ALL_POSTS_QUERY = gql`
   query allPosts($first: Int!, $skip: Int!) {
@@ -41,13 +42,13 @@ export default function PostList(): JSX.Element {
     }
   );
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   if (data) {
-  //     dispatch(setValue(data));
-  //   }
-  // }, [data]);
+  useEffect(() => {
+    if (data) {
+      dispatch(setValue(data));
+    }
+  }, [data]);
   const loadingMorePosts = networkStatus === NetworkStatus.fetchMore;
 
   const loadMorePosts = () => {
