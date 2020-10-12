@@ -1,9 +1,5 @@
 import Head from 'next/head';
 
-interface QueryParams {
-  query: string;
-}
-
 // interface QueryParamsObj {
 //   query: QueryParams;
 // }
@@ -21,10 +17,10 @@ export default function About(): JSX.Element {
   );
 }
 
-About.getInitialProps = async (query: QueryParams) => {
-  try {
-    await fetch(`https://jsonplaceholder.typicode.com/posts/${query}`);
-  } catch (error) {}
+// About.getInitialProps = async (query: QueryParams) => {
+//   try {
+//     await fetch(`https://jsonplaceholder.typicode.com/posts/${query}`);
+//   } catch (error) {}
 
-  return About;
-};
+//   return About;
+// };
