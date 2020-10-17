@@ -7,7 +7,7 @@ export default {
   black,
   white,
   primary: {
-    main: '#008080'
+    main: '#33946B'
   },
   secondary: {
     main: '#FFCC2A'
